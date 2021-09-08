@@ -1,0 +1,1220 @@
+{
+  "version": "7.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "FarFlow": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "FarFlow.template.json",
+        "tags": {
+          "Stack": "FarFlow"
+        }
+      },
+      "metadata": {
+        "/FarFlow": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "repositoryName": "aws-cdk/assets",
+              "imageTag": "c9087be8c1ef78fd4b6299db785894b4076fb67c740cac88e7f91ae0b013059f",
+              "id": "c9087be8c1ef78fd4b6299db785894b4076fb67c740cac88e7f91ae0b013059f",
+              "packaging": "container-image",
+              "path": "asset.c9087be8c1ef78fd4b6299db785894b4076fb67c740cac88e7f91ae0b013059f",
+              "sourceHash": "c9087be8c1ef78fd4b6299db785894b4076fb67c740cac88e7f91ae0b013059f"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/construct-compat.js:358:62)",
+              "LegacyStackSynthesizer.doAddDockerImageAsset (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:135:29)",
+              "LegacyStackSynthesizer.addDockerImageAsset (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:95:25)",
+              "FarFlow.addDockerImageAsset (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stack.js:372:33)",
+              "LegacyStackSynthesizer.addDockerImageAsset (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:99:31)",
+              "new DockerImageAsset (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecr-assets/lib/image-asset.js:87:44)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:30:35)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "repositoryName": "aws-cdk/assets",
+              "imageTag": "66bfff368c75cb8aae51a5de21af6d62f8f6e4c878671d57ac8f06a2e5267127",
+              "id": "66bfff368c75cb8aae51a5de21af6d62f8f6e4c878671d57ac8f06a2e5267127",
+              "packaging": "container-image",
+              "path": "asset.66bfff368c75cb8aae51a5de21af6d62f8f6e4c878671d57ac8f06a2e5267127",
+              "sourceHash": "66bfff368c75cb8aae51a5de21af6d62f8f6e4c878671d57ac8f06a2e5267127"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/construct-compat.js:358:62)",
+              "LegacyStackSynthesizer.doAddDockerImageAsset (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:135:29)",
+              "LegacyStackSynthesizer.addDockerImageAsset (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:95:25)",
+              "FarFlow.addDockerImageAsset (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stack.js:372:33)",
+              "LegacyStackSynthesizer.addDockerImageAsset (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:99:31)",
+              "new DockerImageAsset (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecr-assets/lib/image-asset.js:87:44)",
+              "new AirflowDagTaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/task-construct.js:26:34)",
+              "new DagTasks (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/dag-tasks.js:31:9)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:33:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          },
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "Stack",
+                "Value": "FarFlow"
+              }
+            ],
+            "trace": [
+              "ConstructNode.addMetadata (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/construct-compat.js:358:62)",
+              "Object.addStackArtifactToAssembly (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stack-synthesizers/_shared.js:22:20)",
+              "LegacyStackSynthesizer.emitStackArtifact (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stack-synthesizers/stack-synthesizer.js:28:19)",
+              "LegacyStackSynthesizer.synthesize (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stack-synthesizers/legacy.js:112:14)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:142:35",
+              "visit (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:181:9)",
+              "visit (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:178:9)",
+              "synthesizeTree (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:136:5)",
+              "Object.synthesize (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:32:5)",
+              "App.synth (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stage.js:90:41)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:41:5)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Vpc8378EB38",
+            "trace": [
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:309:25)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1Subnet5C2D37C4",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:609:24)",
+              "new PublicSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:764:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:518:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1RouteTable6C95E38E",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:625:23)",
+              "new PublicSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:764:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:518:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1RouteTableAssociation97140677",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:630:9)",
+              "new PublicSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:764:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:518:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1DefaultRoute3DA9E72A",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:662:23)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:342:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:341:32)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1EIPD7E02669",
+            "trace": [
+              "PublicSubnet.addNatGateway (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:777:27)",
+              "NatGatewayProvider.configureNat (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/nat.js:59:33)",
+              "Vpc.createNatGateways (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:476:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:347:22)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet1NATGateway4D7517AA",
+            "trace": [
+              "PublicSubnet.addNatGateway (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:775:21)",
+              "NatGatewayProvider.configureNat (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/nat.js:59:33)",
+              "Vpc.createNatGateways (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:476:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:347:22)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2Subnet691E08A3",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:609:24)",
+              "new PublicSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:764:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:518:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2RouteTable94F7E489",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:625:23)",
+              "new PublicSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:764:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:518:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2RouteTableAssociationDD5762D8",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:630:9)",
+              "new PublicSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:764:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:518:42",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2DefaultRoute97F91067",
+            "trace": [
+              "PublicSubnet.addDefaultInternetRoute (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:662:23)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:342:30",
+              "Array.forEach (<anonymous>)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:341:32)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2EIP3C605A87",
+            "trace": [
+              "PublicSubnet.addNatGateway (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:777:27)",
+              "NatGatewayProvider.configureNat (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/nat.js:59:33)",
+              "Vpc.createNatGateways (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:476:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:347:22)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PublicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPublicSubnet2NATGateway9182C01D",
+            "trace": [
+              "PublicSubnet.addNatGateway (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:775:21)",
+              "NatGatewayProvider.configureNat (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/nat.js:59:33)",
+              "Vpc.createNatGateways (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:476:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:347:22)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PrivateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1Subnet536B997A",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:609:24)",
+              "new PrivateSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:799:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:523:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PrivateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1RouteTableB2C5B500",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:625:23)",
+              "new PrivateSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:799:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:523:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PrivateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1RouteTableAssociation70C59FA6",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:630:9)",
+              "new PrivateSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:799:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:523:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PrivateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet1DefaultRouteBE02A9ED",
+            "trace": [
+              "PrivateSubnet.addRoute (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:704:23)",
+              "NatGatewayProvider.configureSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/nat.js:70:16)",
+              "NatGatewayProvider.configureNat (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/nat.js:64:18)",
+              "Vpc.createNatGateways (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:476:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:347:22)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PrivateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2Subnet3788AAA1",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:609:24)",
+              "new PrivateSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:799:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:523:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PrivateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2RouteTableA678073B",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:625:23)",
+              "new PrivateSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:799:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:523:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PrivateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2RouteTableAssociationA89CAD56",
+            "trace": [
+              "new Subnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:630:9)",
+              "new PrivateSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:799:9)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:523:43",
+              "Array.forEach (<anonymous>)",
+              "Vpc.createSubnetResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:502:32)",
+              "Vpc.createSubnets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:498:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:330:14)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/PrivateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcPrivateSubnet2DefaultRoute060D2087",
+            "trace": [
+              "PrivateSubnet.addRoute (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:704:23)",
+              "NatGatewayProvider.configureSubnet (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/nat.js:70:16)",
+              "NatGatewayProvider.configureNat (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/nat.js:64:18)",
+              "Vpc.createNatGateways (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:476:18)",
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:347:22)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcIGWD7BA715C",
+            "trace": [
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:334:25)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/Vpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VpcVPCGWBF912B6E",
+            "trace": [
+              "new Vpc (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/vpc.js:337:25)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:14:19)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/ECSCluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ECSCluster7D463CD4",
+            "trace": [
+              "new Cluster (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/cluster.js:42:25)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:16:23)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/SecurityGroup": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "Ignoring Egress rule since 'allowAllOutbound' is set to true; To add customize rules, set allowAllOutbound=false on the SecurityGroup",
+            "trace": [
+              "Annotations.addMessage (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/annotations.js:85:42)",
+              "Annotations.addWarning (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/annotations.js:31:14)",
+              "SecurityGroup.addEgressRule (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:298:41)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/connections.js:116:31",
+              "ReactiveList.forEachAndForever (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/connections.js:198:13)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/connections.js:114:38",
+              "ReactiveList.forEachAndForever (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/connections.js:198:13)",
+              "Connections.allowInternally (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/connections.js:113:30)",
+              "new DagTasks (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/dag-tasks.js:24:30)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:33:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecurityGroupDD263621",
+            "trace": [
+              "new SecurityGroup (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:193:30)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:18:39)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/SecurityGroup/from FarFlowSecurityGroupF3A57711:2049": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecurityGroupfromFarFlowSecurityGroupF3A57711204913C15908",
+            "trace": [
+              "SecurityGroup.addIngressRule (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:44:13)",
+              "SecurityGroup.addIngressRule (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/security-group.js:272:19)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/connections.js:115:31",
+              "ReactiveList.forEachAndForever (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/connections.js:198:13)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/connections.js:114:38",
+              "ReactiveList.forEachAndForever (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/connections.js:198:13)",
+              "Connections.allowInternally (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ec2/lib/connections.js:113:30)",
+              "new DagTasks (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/dag-tasks.js:24:30)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:33:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/RDS-Postgres/DatabseSecret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RDSPostgresDatabseSecret318154C2",
+            "trace": [
+              "new Secret (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-secretsmanager/lib/secret.js:166:26)",
+              "new RDSConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/rds.js:11:31)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:20:21)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/RDS-Postgres/RDSInstance/SubnetGroup/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RDSPostgresRDSInstanceSubnetGroupB6B4FDAE",
+            "trace": [
+              "new SubnetGroup (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-rds/lib/subnet-group.js:21:29)",
+              "new DatabaseInstanceNew (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-rds/lib/instance.js:133:87)",
+              "new DatabaseInstanceSource (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-rds/lib/instance.js:229:9)",
+              "new DatabaseInstance (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-rds/lib/instance.js:327:9)",
+              "new RDSConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/rds.js:29:28)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:20:21)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/RDS-Postgres/RDSInstance/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RDSPostgresRDSInstance7A956EB1",
+            "trace": [
+              "new DatabaseInstance (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-rds/lib/instance.js:330:26)",
+              "new RDSConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/rds.js:29:28)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:20:21)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowTask/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceAirflowTaskTaskRoleDAB3F347",
+            "trace": [
+              "new Role (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "new TaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:66:43)",
+              "new FargateTaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-task-definition.js:19:9)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:33:29)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowTask/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceAirflowTask71E3494E",
+            "trace": [
+              "new TaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:69:25)",
+              "new FargateTaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-task-definition.js:19:9)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:33:29)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowTask/WebserverContainer/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceAirflowTaskWebserverContainerLogGroupB3157555",
+            "trace": [
+              "new LogGroup (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/node_modules/@aws-cdk/aws-logs/lib/log-group.js:142:26)",
+              "AwsLogDriver.bind (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.js:28:48)",
+              "new ContainerDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:83:50)",
+              "FargateTaskDefinition.addContainer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:191:16)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:52:18)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowTask/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceAirflowTaskExecutionRoleDFF6909B",
+            "trace": [
+              "new Role (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "FargateTaskDefinition.obtainExecutionRole (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:245:35)",
+              "Object.bind (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/container-image.js:39:79)",
+              "new ContainerDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:81:40)",
+              "FargateTaskDefinition.addContainer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:191:16)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:52:18)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowTask/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceAirflowTaskExecutionRoleDefaultPolicy68F65745",
+            "trace": [
+              "new Policy (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/node_modules/@aws-cdk/aws-iam/lib/policy.js:49:26)",
+              "Role.addToPrincipalPolicy (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/node_modules/@aws-cdk/aws-iam/lib/role.js:193:34)",
+              "Function.addToPrincipal (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-iam/lib/grant.js:82:65)",
+              "Function.addToPrincipalOrResource (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-iam/lib/grant.js:39:30)",
+              "Import.grant (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecr/lib/repository.js:118:26)",
+              "Import.grantPull (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecr/lib/repository.js:130:26)",
+              "Object.bind (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/container-image.js:39:34)",
+              "new ContainerDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:81:40)",
+              "FargateTaskDefinition.addContainer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:191:16)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:52:18)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowTask/SchedulerContainer/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceAirflowTaskSchedulerContainerLogGroupFA5FDB3B",
+            "trace": [
+              "new LogGroup (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/node_modules/@aws-cdk/aws-logs/lib/log-group.js:142:26)",
+              "AwsLogDriver.bind (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.js:28:48)",
+              "new ContainerDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:83:50)",
+              "FargateTaskDefinition.addContainer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:191:16)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:52:18)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowTask/WorkerContainer/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceAirflowTaskWorkerContainerLogGroup21E76534",
+            "trace": [
+              "new LogGroup (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/node_modules/@aws-cdk/aws-logs/lib/log-group.js:142:26)",
+              "AwsLogDriver.bind (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/log-drivers/aws-log-driver.js:28:48)",
+              "new ContainerDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:83:50)",
+              "FargateTaskDefinition.addContainer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:191:16)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:52:18)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowService/AirflowService/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowService91DB4125",
+            "trace": [
+              "new BaseService (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/base-service.js:112:25)",
+              "new FargateService (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-service.js:53:9)",
+              "new ServiceConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/service-construct.js:22:31)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:63:9)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowService/NetworkLoadBalancer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceNetworkLoadBalancerE66A9F34",
+            "trace": [
+              "new BaseLoadBalancer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-load-balancer.js:31:26)",
+              "new NetworkLoadBalancer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-load-balancer.js:64:9)",
+              "ServiceConstruct.attachLoadBalancer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/service-construct.js:46:28)",
+              "new ServiceConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/service-construct.js:41:29)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:63:9)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowService/NetworkLoadBalancer/Listener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceNetworkLoadBalancerListener51C34BF5",
+            "trace": [
+              "new BaseListener (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-listener.js:17:26)",
+              "new NetworkListener (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-listener.js:30:9)",
+              "NetworkLoadBalancer.addListener (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-load-balancer.js:77:16)",
+              "ServiceConstruct.attachLoadBalancer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/service-construct.js:51:39)",
+              "new ServiceConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/service-construct.js:41:29)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:63:9)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowService/NetworkLoadBalancer/Listener/AirflowFargateServiceTargetGroupGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceNetworkLoadBalancerListenerAirflowFargateServiceTargetGroupGroupBE293586",
+            "trace": [
+              "new TargetGroupBase (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/shared/base-target-group.js:35:25)",
+              "new NetworkTargetGroup (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-target-group.js:20:9)",
+              "NetworkListener.addTargets (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-elasticloadbalancingv2/lib/nlb/network-listener.js:135:23)",
+              "ServiceConstruct.attachLoadBalancer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/service-construct.js:54:38)",
+              "new ServiceConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/service-construct.js:41:29)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:63:9)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AirflowService/LoadBalanceDNSName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceLoadBalanceDNSName1AB9D85A",
+            "trace": [
+              "new ServiceConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/service-construct.js:40:40)",
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:63:9)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/AirflowService/AdminPassword": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AirflowServiceAdminPassword0868D285",
+            "trace": [
+              "new AirflowConstruct (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/airflow-construct.js:79:36)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:25:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/DagTasks-TaskConstruct/EFSVolume/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DagTasksTaskConstructEFSVolumeBE5A9C43",
+            "trace": [
+              "new FileSystem (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:68:28)",
+              "new DagTasks (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/dag-tasks.js:20:24)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:33:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/DagTasks-TaskConstruct/EFSVolume/EfsMountTarget1": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DagTasksTaskConstructEFSVolumeEfsMountTarget101AB681F",
+            "trace": [
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:92:33",
+              "Array.forEach (<anonymous>)",
+              "new FileSystem (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:91:27)",
+              "new DagTasks (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/dag-tasks.js:20:24)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:33:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/DagTasks-TaskConstruct/EFSVolume/EfsMountTarget2": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DagTasksTaskConstructEFSVolumeEfsMountTarget251E6500D",
+            "trace": [
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:92:33",
+              "Array.forEach (<anonymous>)",
+              "new FileSystem (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-efs/lib/efs-file-system.js:91:27)",
+              "new DagTasks (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/dag-tasks.js:20:24)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:33:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DagTasksTaskConstructFarFlowMLTaskTaskConstructFarFlowMLTaskTaskDefTaskRole670B93AB",
+            "trace": [
+              "new Role (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "new TaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:66:43)",
+              "new FargateTaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-task-definition.js:19:9)",
+              "new AirflowDagTaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/task-construct.js:12:28)",
+              "new DagTasks (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/dag-tasks.js:31:9)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:33:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DagTasksTaskConstructFarFlowMLTaskTaskConstructFarFlowMLTaskTaskDef10A5D7FD",
+            "trace": [
+              "new TaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:69:25)",
+              "new FargateTaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/fargate/fargate-task-definition.js:19:9)",
+              "new AirflowDagTaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/task-construct.js:12:28)",
+              "new DagTasks (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/dag-tasks.js:31:9)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:33:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DagTasksTaskConstructFarFlowMLTaskTaskConstructFarFlowMLTaskTaskDefExecutionRole6FB3CE73",
+            "trace": [
+              "new Role (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/node_modules/@aws-cdk/aws-iam/lib/role.js:62:22)",
+              "FargateTaskDefinition.obtainExecutionRole (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:245:35)",
+              "Object.bind (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/container-image.js:39:79)",
+              "new ContainerDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:81:40)",
+              "FargateTaskDefinition.addContainer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:191:16)",
+              "new AirflowDagTaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/task-construct.js:29:36)",
+              "new DagTasks (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/dag-tasks.js:31:9)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:33:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DagTasksTaskConstructFarFlowMLTaskTaskConstructFarFlowMLTaskTaskDefExecutionRoleDefaultPolicy5DD91601",
+            "trace": [
+              "new Policy (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/node_modules/@aws-cdk/aws-iam/lib/policy.js:49:26)",
+              "Role.addToPrincipalPolicy (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/node_modules/@aws-cdk/aws-iam/lib/role.js:193:34)",
+              "Function.addToPrincipal (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-iam/lib/grant.js:82:65)",
+              "Function.addToPrincipalOrResource (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-iam/lib/grant.js:39:30)",
+              "Import.grant (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecr/lib/repository.js:118:26)",
+              "Import.grantPull (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecr/lib/repository.js:130:26)",
+              "Object.bind (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/container-image.js:39:34)",
+              "new ContainerDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/container-definition.js:81:40)",
+              "FargateTaskDefinition.addContainer (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-ecs/lib/base/task-definition.js:191:16)",
+              "new AirflowDagTaskDefinition (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/task-construct.js:29:36)",
+              "new DagTasks (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/dag-tasks.js:31:9)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:33:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/FarFlowDagTaskLogs/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FarFlowDagTaskLogsA7522BE9",
+            "trace": [
+              "new LogGroup (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/aws-logs/lib/log-group.js:142:26)",
+              "new DagTasks (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/constructs/dag-tasks.js:15:23)",
+              "new FarFlow (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:33:9)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:40:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:22:30)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:127:9",
+              "visit (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:181:9)",
+              "visit (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:178:9)",
+              "injectMetadataResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:116:5)",
+              "Object.synthesize (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:16:5)",
+              "App.synth (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stage.js:90:41)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:41:5)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/FarFlow/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/metadata-resource.js:30:35)",
+              "/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:127:9",
+              "visit (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:181:9)",
+              "visit (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:178:9)",
+              "injectMetadataResources (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:116:5)",
+              "Object.synthesize (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/private/synthesis.js:16:5)",
+              "App.synth (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/node_modules/@aws-cdk/core/lib/stage.js:90:41)",
+              "Object.<anonymous> (/Users/fwang/Desktop/Airflow-on-Fargate-ML-Model/app/farflow.js:41:5)",
+              "Module._compile (node:internal/modules/cjs/loader:1102:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1131:10)",
+              "Module.load (node:internal/modules/cjs/loader:967:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:807:14)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:76:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

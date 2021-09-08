@@ -1,0 +1,2130 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "FarFlow": {
+        "id": "FarFlow",
+        "path": "FarFlow",
+        "children": {
+          "Vpc": {
+            "id": "Vpc",
+            "path": "FarFlow/Vpc",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "FarFlow/Vpc/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPC",
+                  "aws:cdk:cloudformation:props": {
+                    "cidrBlock": "10.0.0.0/16",
+                    "enableDnsHostnames": true,
+                    "enableDnsSupport": true,
+                    "instanceTenancy": "default",
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "FarFlow/Vpc"
+                      },
+                      {
+                        "key": "Stack",
+                        "value": "FarFlow"
+                      }
+                    ]
+                  }
+                }
+              },
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "FarFlow/Vpc/PublicSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "FarFlow/Vpc/PublicSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.0.0/18",
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PublicSubnet1"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "FarFlow/Vpc/PublicSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "FarFlow/Vpc/PublicSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PublicSubnet1"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "FarFlow/Vpc/PublicSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPublicSubnet1RouteTable6C95E38E"
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPublicSubnet1Subnet5C2D37C4"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "FarFlow/Vpc/PublicSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPublicSubnet1RouteTable6C95E38E"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "VpcIGWD7BA715C"
+                        }
+                      }
+                    }
+                  },
+                  "EIP": {
+                    "id": "EIP",
+                    "path": "FarFlow/Vpc/PublicSubnet1/EIP",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "domain": "vpc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PublicSubnet1"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "NATGateway": {
+                    "id": "NATGateway",
+                    "path": "FarFlow/Vpc/PublicSubnet1/NATGateway",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "allocationId": {
+                          "Fn::GetAtt": [
+                            "VpcPublicSubnet1EIPD7E02669",
+                            "AllocationId"
+                          ]
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPublicSubnet1Subnet5C2D37C4"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PublicSubnet1"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "FarFlow/Vpc/PublicSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "FarFlow/Vpc/PublicSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.64.0/18",
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": true,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Public"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PublicSubnet2"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "FarFlow/Vpc/PublicSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "FarFlow/Vpc/PublicSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PublicSubnet2"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "FarFlow/Vpc/PublicSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPublicSubnet2RouteTable94F7E489"
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPublicSubnet2Subnet691E08A3"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "FarFlow/Vpc/PublicSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPublicSubnet2RouteTable94F7E489"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "gatewayId": {
+                          "Ref": "VpcIGWD7BA715C"
+                        }
+                      }
+                    }
+                  },
+                  "EIP": {
+                    "id": "EIP",
+                    "path": "FarFlow/Vpc/PublicSubnet2/EIP",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
+                      "aws:cdk:cloudformation:props": {
+                        "domain": "vpc",
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PublicSubnet2"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "NATGateway": {
+                    "id": "NATGateway",
+                    "path": "FarFlow/Vpc/PublicSubnet2/NATGateway",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
+                      "aws:cdk:cloudformation:props": {
+                        "allocationId": {
+                          "Fn::GetAtt": [
+                            "VpcPublicSubnet2EIP3C605A87",
+                            "AllocationId"
+                          ]
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPublicSubnet2Subnet691E08A3"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PublicSubnet2"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "PrivateSubnet1": {
+                "id": "PrivateSubnet1",
+                "path": "FarFlow/Vpc/PrivateSubnet1",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "FarFlow/Vpc/PrivateSubnet1/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.128.0/18",
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            0,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PrivateSubnet1"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "FarFlow/Vpc/PrivateSubnet1/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "FarFlow/Vpc/PrivateSubnet1/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PrivateSubnet1"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "FarFlow/Vpc/PrivateSubnet1/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPrivateSubnet1RouteTableB2C5B500"
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPrivateSubnet1Subnet536B997A"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "FarFlow/Vpc/PrivateSubnet1/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPrivateSubnet1RouteTableB2C5B500"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VpcPublicSubnet1NATGateway4D7517AA"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "PrivateSubnet2": {
+                "id": "PrivateSubnet2",
+                "path": "FarFlow/Vpc/PrivateSubnet2",
+                "children": {
+                  "Subnet": {
+                    "id": "Subnet",
+                    "path": "FarFlow/Vpc/PrivateSubnet2/Subnet",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Subnet",
+                      "aws:cdk:cloudformation:props": {
+                        "cidrBlock": "10.0.192.0/18",
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "availabilityZone": {
+                          "Fn::Select": [
+                            1,
+                            {
+                              "Fn::GetAZs": ""
+                            }
+                          ]
+                        },
+                        "mapPublicIpOnLaunch": false,
+                        "tags": [
+                          {
+                            "key": "aws-cdk:subnet-name",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "aws-cdk:subnet-type",
+                            "value": "Private"
+                          },
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PrivateSubnet2"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "Acl": {
+                    "id": "Acl",
+                    "path": "FarFlow/Vpc/PrivateSubnet2/Acl"
+                  },
+                  "RouteTable": {
+                    "id": "RouteTable",
+                    "path": "FarFlow/Vpc/PrivateSubnet2/RouteTable",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::RouteTable",
+                      "aws:cdk:cloudformation:props": {
+                        "vpcId": {
+                          "Ref": "Vpc8378EB38"
+                        },
+                        "tags": [
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/Vpc/PrivateSubnet2"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "RouteTableAssociation": {
+                    "id": "RouteTableAssociation",
+                    "path": "FarFlow/Vpc/PrivateSubnet2/RouteTableAssociation",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::SubnetRouteTableAssociation",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPrivateSubnet2RouteTableA678073B"
+                        },
+                        "subnetId": {
+                          "Ref": "VpcPrivateSubnet2Subnet3788AAA1"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultRoute": {
+                    "id": "DefaultRoute",
+                    "path": "FarFlow/Vpc/PrivateSubnet2/DefaultRoute",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EC2::Route",
+                      "aws:cdk:cloudformation:props": {
+                        "routeTableId": {
+                          "Ref": "VpcPrivateSubnet2RouteTableA678073B"
+                        },
+                        "destinationCidrBlock": "0.0.0.0/0",
+                        "natGatewayId": {
+                          "Ref": "VpcPublicSubnet2NATGateway9182C01D"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "IGW": {
+                "id": "IGW",
+                "path": "FarFlow/Vpc/IGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::InternetGateway",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Name",
+                        "value": "FarFlow/Vpc"
+                      },
+                      {
+                        "key": "Stack",
+                        "value": "FarFlow"
+                      }
+                    ]
+                  }
+                }
+              },
+              "VPCGW": {
+                "id": "VPCGW",
+                "path": "FarFlow/Vpc/VPCGW",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::VPCGatewayAttachment",
+                  "aws:cdk:cloudformation:props": {
+                    "vpcId": {
+                      "Ref": "Vpc8378EB38"
+                    },
+                    "internetGatewayId": {
+                      "Ref": "VpcIGWD7BA715C"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "ECSCluster": {
+            "id": "ECSCluster",
+            "path": "FarFlow/ECSCluster",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "FarFlow/ECSCluster/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::Cluster",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "Stack",
+                        "value": "FarFlow"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "SecurityGroup": {
+            "id": "SecurityGroup",
+            "path": "FarFlow/SecurityGroup",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "FarFlow/SecurityGroup/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "groupDescription": "FarFlow/SecurityGroup",
+                    "securityGroupEgress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "description": "Allow all outbound traffic by default",
+                        "ipProtocol": "-1"
+                      }
+                    ],
+                    "securityGroupIngress": [
+                      {
+                        "cidrIp": "0.0.0.0/0",
+                        "ipProtocol": "tcp",
+                        "fromPort": 0,
+                        "toPort": 65535,
+                        "description": "from 0.0.0.0/0:All"
+                      }
+                    ],
+                    "tags": [
+                      {
+                        "key": "Stack",
+                        "value": "FarFlow"
+                      }
+                    ],
+                    "vpcId": {
+                      "Ref": "Vpc8378EB38"
+                    }
+                  }
+                }
+              },
+              "from FarFlowSecurityGroupF3A57711:2049": {
+                "id": "from FarFlowSecurityGroupF3A57711:2049",
+                "path": "FarFlow/SecurityGroup/from FarFlowSecurityGroupF3A57711:2049",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                  "aws:cdk:cloudformation:props": {
+                    "ipProtocol": "tcp",
+                    "description": "from FarFlowSecurityGroupF3A57711:2049",
+                    "fromPort": 2049,
+                    "groupId": {
+                      "Fn::GetAtt": [
+                        "SecurityGroupDD263621",
+                        "GroupId"
+                      ]
+                    },
+                    "sourceSecurityGroupId": {
+                      "Fn::GetAtt": [
+                        "SecurityGroupDD263621",
+                        "GroupId"
+                      ]
+                    },
+                    "toPort": 2049
+                  }
+                }
+              }
+            }
+          },
+          "RDS-Postgres": {
+            "id": "RDS-Postgres",
+            "path": "FarFlow/RDS-Postgres",
+            "children": {
+              "DatabseSecret": {
+                "id": "DatabseSecret",
+                "path": "FarFlow/RDS-Postgres/DatabseSecret",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "FarFlow/RDS-Postgres/DatabseSecret/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::SecretsManager::Secret",
+                      "aws:cdk:cloudformation:props": {
+                        "description": "airflow RDS secrets",
+                        "generateSecretString": {
+                          "secretStringTemplate": "{\"username\":\"airflow\"}",
+                          "generateStringKey": "password",
+                          "excludeUppercase": false,
+                          "requireEachIncludedType": false,
+                          "includeSpace": false,
+                          "excludePunctuation": true,
+                          "excludeLowercase": false,
+                          "excludeNumbers": false,
+                          "passwordLength": 16
+                        },
+                        "name": "RDS-PostgresSecret",
+                        "tags": [
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "RDSInstance": {
+                "id": "RDSInstance",
+                "path": "FarFlow/RDS-Postgres/RDSInstance",
+                "children": {
+                  "SubnetGroup": {
+                    "id": "SubnetGroup",
+                    "path": "FarFlow/RDS-Postgres/RDSInstance/SubnetGroup",
+                    "children": {
+                      "Default": {
+                        "id": "Default",
+                        "path": "FarFlow/RDS-Postgres/RDSInstance/SubnetGroup/Default",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::RDS::DBSubnetGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "dbSubnetGroupDescription": "Subnet group for RDSInstance database",
+                            "subnetIds": [
+                              {
+                                "Ref": "VpcPrivateSubnet1Subnet536B997A"
+                              },
+                              {
+                                "Ref": "VpcPrivateSubnet2Subnet3788AAA1"
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "Stack",
+                                "value": "FarFlow"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "FarFlow/RDS-Postgres/RDSInstance/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::RDS::DBInstance",
+                      "aws:cdk:cloudformation:props": {
+                        "dbInstanceClass": "db.t2.small",
+                        "allocatedStorage": "25",
+                        "autoMinorVersionUpgrade": false,
+                        "backupRetentionPeriod": 30,
+                        "copyTagsToSnapshot": true,
+                        "dbInstanceIdentifier": "farflow",
+                        "dbName": "farflow",
+                        "dbSubnetGroupName": {
+                          "Ref": "RDSPostgresRDSInstanceSubnetGroupB6B4FDAE"
+                        },
+                        "deletionProtection": false,
+                        "engine": "postgres",
+                        "engineVersion": "12.4",
+                        "masterUsername": "airflow",
+                        "masterUserPassword": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "{{resolve:secretsmanager:",
+                              {
+                                "Ref": "RDSPostgresDatabseSecret318154C2"
+                              },
+                              ":SecretString:password::}}"
+                            ]
+                          ]
+                        },
+                        "multiAz": false,
+                        "port": "5432",
+                        "publiclyAccessible": false,
+                        "storageEncrypted": true,
+                        "storageType": "gp2",
+                        "tags": [
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ],
+                        "vpcSecurityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "SecurityGroupDD263621",
+                              "GroupId"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "AirflowService": {
+            "id": "AirflowService",
+            "path": "FarFlow/AirflowService",
+            "children": {
+              "AirflowBuildImage": {
+                "id": "AirflowBuildImage",
+                "path": "FarFlow/AirflowService/AirflowBuildImage",
+                "children": {
+                  "Staging": {
+                    "id": "Staging",
+                    "path": "FarFlow/AirflowService/AirflowBuildImage/Staging"
+                  },
+                  "Repository": {
+                    "id": "Repository",
+                    "path": "FarFlow/AirflowService/AirflowBuildImage/Repository"
+                  }
+                }
+              },
+              "AirflowTask": {
+                "id": "AirflowTask",
+                "path": "FarFlow/AirflowService/AirflowTask",
+                "children": {
+                  "TaskRole": {
+                    "id": "TaskRole",
+                    "path": "FarFlow/AirflowService/AirflowTask/TaskRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "FarFlow/AirflowService/AirflowTask/TaskRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "ecs-tasks.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "managedPolicyArns": [
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/AmazonSQSFullAccess"
+                                  ]
+                                ]
+                              },
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/AmazonECS_FullAccess"
+                                  ]
+                                ]
+                              },
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/AmazonElasticFileSystemClientReadWriteAccess"
+                                  ]
+                                ]
+                              },
+                              {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":iam::aws:policy/CloudWatchLogsReadOnlyAccess"
+                                  ]
+                                ]
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "Stack",
+                                "value": "FarFlow"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "FarFlow/AirflowService/AirflowTask/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                      "aws:cdk:cloudformation:props": {
+                        "containerDefinitions": [
+                          {
+                            "entryPoint": [
+                              "/webserver_entry.sh"
+                            ],
+                            "essential": true,
+                            "image": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ".dkr.ecr.",
+                                  {
+                                    "Ref": "AWS::Region"
+                                  },
+                                  ".",
+                                  {
+                                    "Ref": "AWS::URLSuffix"
+                                  },
+                                  "/aws-cdk/assets:c9087be8c1ef78fd4b6299db785894b4076fb67c740cac88e7f91ae0b013059f"
+                                ]
+                              ]
+                            },
+                            "name": "WebserverContainer",
+                            "portMappings": [
+                              {
+                                "containerPort": 8080,
+                                "protocol": "tcp"
+                              }
+                            ],
+                            "logConfiguration": {
+                              "logDriver": "awslogs",
+                              "options": {
+                                "awslogs-group": {
+                                  "Ref": "AirflowServiceAirflowTaskWebserverContainerLogGroupB3157555"
+                                },
+                                "awslogs-stream-prefix": "FarFlowLogging",
+                                "awslogs-region": {
+                                  "Ref": "AWS::Region"
+                                }
+                              }
+                            },
+                            "environment": [
+                              {
+                                "name": "AIRFLOW__CORE__SQL_ALCHEMY_CONN",
+                                "value": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "postgresql+pygresql://airflow:{{resolve:secretsmanager:",
+                                      {
+                                        "Ref": "RDSPostgresDatabseSecret318154C2"
+                                      },
+                                      ":SecretString:password::}}@",
+                                      {
+                                        "Fn::GetAtt": [
+                                          "RDSPostgresRDSInstance7A956EB1",
+                                          "Endpoint.Address"
+                                        ]
+                                      },
+                                      ":5432/farflow"
+                                    ]
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "AIRFLOW__CELERY__BROKER_URL",
+                                "value": "sqs://"
+                              },
+                              {
+                                "name": "AIRFLOW__CELERY__RESULT_BACKEND",
+                                "value": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "db+postgresql+pygresql://airflow:{{resolve:secretsmanager:",
+                                      {
+                                        "Ref": "RDSPostgresDatabseSecret318154C2"
+                                      },
+                                      ":SecretString:password::}}@",
+                                      {
+                                        "Fn::GetAtt": [
+                                          "RDSPostgresRDSInstance7A956EB1",
+                                          "Endpoint.Address"
+                                        ]
+                                      },
+                                      ":5432/farflow"
+                                    ]
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "AIRFLOW__CORE__EXECUTOR",
+                                "value": "CeleryExecutor"
+                              },
+                              {
+                                "name": "AIRFLOW__WEBSERVER__RBAC",
+                                "value": "True"
+                              },
+                              {
+                                "name": "ADMIN_PASS",
+                                "value": "255b8c68-eb79-44a0-b9a4-75f85202ed7c"
+                              },
+                              {
+                                "name": "CLUSTER",
+                                "value": {
+                                  "Ref": "ECSCluster7D463CD4"
+                                }
+                              },
+                              {
+                                "name": "SECURITY_GROUP",
+                                "value": {
+                                  "Fn::GetAtt": [
+                                    "SecurityGroupDD263621",
+                                    "GroupId"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "SUBNETS",
+                                "value": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      {
+                                        "Ref": "VpcPrivateSubnet1Subnet536B997A"
+                                      },
+                                      ",",
+                                      {
+                                        "Ref": "VpcPrivateSubnet2Subnet3788AAA1"
+                                      }
+                                    ]
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entryPoint": [
+                              "/scheduler_entry.sh"
+                            ],
+                            "essential": true,
+                            "image": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ".dkr.ecr.",
+                                  {
+                                    "Ref": "AWS::Region"
+                                  },
+                                  ".",
+                                  {
+                                    "Ref": "AWS::URLSuffix"
+                                  },
+                                  "/aws-cdk/assets:c9087be8c1ef78fd4b6299db785894b4076fb67c740cac88e7f91ae0b013059f"
+                                ]
+                              ]
+                            },
+                            "name": "SchedulerContainer",
+                            "portMappings": [
+                              {
+                                "containerPort": 8081,
+                                "protocol": "tcp"
+                              }
+                            ],
+                            "logConfiguration": {
+                              "logDriver": "awslogs",
+                              "options": {
+                                "awslogs-group": {
+                                  "Ref": "AirflowServiceAirflowTaskSchedulerContainerLogGroupFA5FDB3B"
+                                },
+                                "awslogs-stream-prefix": "FarFlowLogging",
+                                "awslogs-region": {
+                                  "Ref": "AWS::Region"
+                                }
+                              }
+                            },
+                            "environment": [
+                              {
+                                "name": "AIRFLOW__CORE__SQL_ALCHEMY_CONN",
+                                "value": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "postgresql+pygresql://airflow:{{resolve:secretsmanager:",
+                                      {
+                                        "Ref": "RDSPostgresDatabseSecret318154C2"
+                                      },
+                                      ":SecretString:password::}}@",
+                                      {
+                                        "Fn::GetAtt": [
+                                          "RDSPostgresRDSInstance7A956EB1",
+                                          "Endpoint.Address"
+                                        ]
+                                      },
+                                      ":5432/farflow"
+                                    ]
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "AIRFLOW__CELERY__BROKER_URL",
+                                "value": "sqs://"
+                              },
+                              {
+                                "name": "AIRFLOW__CELERY__RESULT_BACKEND",
+                                "value": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "db+postgresql+pygresql://airflow:{{resolve:secretsmanager:",
+                                      {
+                                        "Ref": "RDSPostgresDatabseSecret318154C2"
+                                      },
+                                      ":SecretString:password::}}@",
+                                      {
+                                        "Fn::GetAtt": [
+                                          "RDSPostgresRDSInstance7A956EB1",
+                                          "Endpoint.Address"
+                                        ]
+                                      },
+                                      ":5432/farflow"
+                                    ]
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "AIRFLOW__CORE__EXECUTOR",
+                                "value": "CeleryExecutor"
+                              },
+                              {
+                                "name": "AIRFLOW__WEBSERVER__RBAC",
+                                "value": "True"
+                              },
+                              {
+                                "name": "ADMIN_PASS",
+                                "value": "255b8c68-eb79-44a0-b9a4-75f85202ed7c"
+                              },
+                              {
+                                "name": "CLUSTER",
+                                "value": {
+                                  "Ref": "ECSCluster7D463CD4"
+                                }
+                              },
+                              {
+                                "name": "SECURITY_GROUP",
+                                "value": {
+                                  "Fn::GetAtt": [
+                                    "SecurityGroupDD263621",
+                                    "GroupId"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "SUBNETS",
+                                "value": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      {
+                                        "Ref": "VpcPrivateSubnet1Subnet536B997A"
+                                      },
+                                      ",",
+                                      {
+                                        "Ref": "VpcPrivateSubnet2Subnet3788AAA1"
+                                      }
+                                    ]
+                                  ]
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entryPoint": [
+                              "/worker_entry.sh"
+                            ],
+                            "essential": true,
+                            "image": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ".dkr.ecr.",
+                                  {
+                                    "Ref": "AWS::Region"
+                                  },
+                                  ".",
+                                  {
+                                    "Ref": "AWS::URLSuffix"
+                                  },
+                                  "/aws-cdk/assets:c9087be8c1ef78fd4b6299db785894b4076fb67c740cac88e7f91ae0b013059f"
+                                ]
+                              ]
+                            },
+                            "name": "WorkerContainer",
+                            "portMappings": [
+                              {
+                                "containerPort": 8082,
+                                "protocol": "tcp"
+                              }
+                            ],
+                            "logConfiguration": {
+                              "logDriver": "awslogs",
+                              "options": {
+                                "awslogs-group": {
+                                  "Ref": "AirflowServiceAirflowTaskWorkerContainerLogGroup21E76534"
+                                },
+                                "awslogs-stream-prefix": "FarFlowLogging",
+                                "awslogs-region": {
+                                  "Ref": "AWS::Region"
+                                }
+                              }
+                            },
+                            "environment": [
+                              {
+                                "name": "AIRFLOW__CORE__SQL_ALCHEMY_CONN",
+                                "value": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "postgresql+pygresql://airflow:{{resolve:secretsmanager:",
+                                      {
+                                        "Ref": "RDSPostgresDatabseSecret318154C2"
+                                      },
+                                      ":SecretString:password::}}@",
+                                      {
+                                        "Fn::GetAtt": [
+                                          "RDSPostgresRDSInstance7A956EB1",
+                                          "Endpoint.Address"
+                                        ]
+                                      },
+                                      ":5432/farflow"
+                                    ]
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "AIRFLOW__CELERY__BROKER_URL",
+                                "value": "sqs://"
+                              },
+                              {
+                                "name": "AIRFLOW__CELERY__RESULT_BACKEND",
+                                "value": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "db+postgresql+pygresql://airflow:{{resolve:secretsmanager:",
+                                      {
+                                        "Ref": "RDSPostgresDatabseSecret318154C2"
+                                      },
+                                      ":SecretString:password::}}@",
+                                      {
+                                        "Fn::GetAtt": [
+                                          "RDSPostgresRDSInstance7A956EB1",
+                                          "Endpoint.Address"
+                                        ]
+                                      },
+                                      ":5432/farflow"
+                                    ]
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "AIRFLOW__CORE__EXECUTOR",
+                                "value": "CeleryExecutor"
+                              },
+                              {
+                                "name": "AIRFLOW__WEBSERVER__RBAC",
+                                "value": "True"
+                              },
+                              {
+                                "name": "ADMIN_PASS",
+                                "value": "255b8c68-eb79-44a0-b9a4-75f85202ed7c"
+                              },
+                              {
+                                "name": "CLUSTER",
+                                "value": {
+                                  "Ref": "ECSCluster7D463CD4"
+                                }
+                              },
+                              {
+                                "name": "SECURITY_GROUP",
+                                "value": {
+                                  "Fn::GetAtt": [
+                                    "SecurityGroupDD263621",
+                                    "GroupId"
+                                  ]
+                                }
+                              },
+                              {
+                                "name": "SUBNETS",
+                                "value": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      {
+                                        "Ref": "VpcPrivateSubnet1Subnet536B997A"
+                                      },
+                                      ",",
+                                      {
+                                        "Ref": "VpcPrivateSubnet2Subnet3788AAA1"
+                                      }
+                                    ]
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        ],
+                        "cpu": "2048",
+                        "executionRoleArn": {
+                          "Fn::GetAtt": [
+                            "AirflowServiceAirflowTaskExecutionRoleDFF6909B",
+                            "Arn"
+                          ]
+                        },
+                        "family": "FarFlowAirflowServiceAirflowTask5EE9A059",
+                        "memory": "4096",
+                        "networkMode": "awsvpc",
+                        "requiresCompatibilities": [
+                          "FARGATE"
+                        ],
+                        "tags": [
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ],
+                        "taskRoleArn": {
+                          "Fn::GetAtt": [
+                            "AirflowServiceAirflowTaskTaskRoleDAB3F347",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "WebserverContainer": {
+                    "id": "WebserverContainer",
+                    "path": "FarFlow/AirflowService/AirflowTask/WebserverContainer",
+                    "children": {
+                      "LogGroup": {
+                        "id": "LogGroup",
+                        "path": "FarFlow/AirflowService/AirflowTask/WebserverContainer/LogGroup",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "FarFlow/AirflowService/AirflowTask/WebserverContainer/LogGroup/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                              "aws:cdk:cloudformation:props": {
+                                "retentionInDays": 30
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "ExecutionRole": {
+                    "id": "ExecutionRole",
+                    "path": "FarFlow/AirflowService/AirflowTask/ExecutionRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "FarFlow/AirflowService/AirflowTask/ExecutionRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "ecs-tasks.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "tags": [
+                              {
+                                "key": "Stack",
+                                "value": "FarFlow"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "FarFlow/AirflowService/AirflowTask/ExecutionRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "FarFlow/AirflowService/AirflowTask/ExecutionRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "ecr:BatchCheckLayerAvailability",
+                                        "ecr:GetDownloadUrlForLayer",
+                                        "ecr:BatchGetImage"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":ecr:",
+                                            {
+                                              "Ref": "AWS::Region"
+                                            },
+                                            ":",
+                                            {
+                                              "Ref": "AWS::AccountId"
+                                            },
+                                            ":repository/aws-cdk/assets"
+                                          ]
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "Action": "ecr:GetAuthorizationToken",
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    },
+                                    {
+                                      "Action": [
+                                        "logs:CreateLogStream",
+                                        "logs:PutLogEvents"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::GetAtt": [
+                                          "AirflowServiceAirflowTaskWebserverContainerLogGroupB3157555",
+                                          "Arn"
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "Action": [
+                                        "logs:CreateLogStream",
+                                        "logs:PutLogEvents"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::GetAtt": [
+                                          "AirflowServiceAirflowTaskSchedulerContainerLogGroupFA5FDB3B",
+                                          "Arn"
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "Action": [
+                                        "logs:CreateLogStream",
+                                        "logs:PutLogEvents"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::GetAtt": [
+                                          "AirflowServiceAirflowTaskWorkerContainerLogGroup21E76534",
+                                          "Arn"
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "AirflowServiceAirflowTaskExecutionRoleDefaultPolicy68F65745",
+                                "roles": [
+                                  {
+                                    "Ref": "AirflowServiceAirflowTaskExecutionRoleDFF6909B"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "SchedulerContainer": {
+                    "id": "SchedulerContainer",
+                    "path": "FarFlow/AirflowService/AirflowTask/SchedulerContainer",
+                    "children": {
+                      "LogGroup": {
+                        "id": "LogGroup",
+                        "path": "FarFlow/AirflowService/AirflowTask/SchedulerContainer/LogGroup",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "FarFlow/AirflowService/AirflowTask/SchedulerContainer/LogGroup/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                              "aws:cdk:cloudformation:props": {
+                                "retentionInDays": 30
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "WorkerContainer": {
+                    "id": "WorkerContainer",
+                    "path": "FarFlow/AirflowService/AirflowTask/WorkerContainer",
+                    "children": {
+                      "LogGroup": {
+                        "id": "LogGroup",
+                        "path": "FarFlow/AirflowService/AirflowTask/WorkerContainer/LogGroup",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "FarFlow/AirflowService/AirflowTask/WorkerContainer/LogGroup/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                              "aws:cdk:cloudformation:props": {
+                                "retentionInDays": 30
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "AirflowService": {
+                "id": "AirflowService",
+                "path": "FarFlow/AirflowService/AirflowService",
+                "children": {
+                  "AIrflowTaskPolicies": {
+                    "id": "AIrflowTaskPolicies",
+                    "path": "FarFlow/AirflowService/AirflowService/AIrflowTaskPolicies"
+                  },
+                  "AirflowService": {
+                    "id": "AirflowService",
+                    "path": "FarFlow/AirflowService/AirflowService/AirflowService",
+                    "children": {
+                      "Service": {
+                        "id": "Service",
+                        "path": "FarFlow/AirflowService/AirflowService/AirflowService/Service",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ECS::Service",
+                          "aws:cdk:cloudformation:props": {
+                            "cluster": {
+                              "Ref": "ECSCluster7D463CD4"
+                            },
+                            "deploymentConfiguration": {
+                              "maximumPercent": 200,
+                              "minimumHealthyPercent": 50
+                            },
+                            "desiredCount": 1,
+                            "enableEcsManagedTags": false,
+                            "healthCheckGracePeriodSeconds": 60,
+                            "launchType": "FARGATE",
+                            "loadBalancers": [
+                              {
+                                "targetGroupArn": {
+                                  "Ref": "AirflowServiceNetworkLoadBalancerListenerAirflowFargateServiceTargetGroupGroupBE293586"
+                                },
+                                "containerName": "WebserverContainer",
+                                "containerPort": 8080
+                              }
+                            ],
+                            "networkConfiguration": {
+                              "awsvpcConfiguration": {
+                                "assignPublicIp": "DISABLED",
+                                "subnets": [
+                                  {
+                                    "Ref": "VpcPrivateSubnet1Subnet536B997A"
+                                  },
+                                  {
+                                    "Ref": "VpcPrivateSubnet2Subnet3788AAA1"
+                                  }
+                                ],
+                                "securityGroups": [
+                                  {
+                                    "Fn::GetAtt": [
+                                      "SecurityGroupDD263621",
+                                      "GroupId"
+                                    ]
+                                  }
+                                ]
+                              }
+                            },
+                            "platformVersion": "1.4.0",
+                            "tags": [
+                              {
+                                "key": "Stack",
+                                "value": "FarFlow"
+                              }
+                            ],
+                            "taskDefinition": {
+                              "Ref": "AirflowServiceAirflowTask71E3494E"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "NetworkLoadBalancer": {
+                    "id": "NetworkLoadBalancer",
+                    "path": "FarFlow/AirflowService/AirflowService/NetworkLoadBalancer",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "FarFlow/AirflowService/AirflowService/NetworkLoadBalancer/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                          "aws:cdk:cloudformation:props": {
+                            "loadBalancerAttributes": [
+                              {
+                                "key": "deletion_protection.enabled",
+                                "value": "false"
+                              },
+                              {
+                                "key": "load_balancing.cross_zone.enabled",
+                                "value": "true"
+                              }
+                            ],
+                            "scheme": "internet-facing",
+                            "subnets": [
+                              {
+                                "Ref": "VpcPublicSubnet1Subnet5C2D37C4"
+                              },
+                              {
+                                "Ref": "VpcPublicSubnet2Subnet691E08A3"
+                              }
+                            ],
+                            "tags": [
+                              {
+                                "key": "Stack",
+                                "value": "FarFlow"
+                              }
+                            ],
+                            "type": "network"
+                          }
+                        }
+                      },
+                      "Listener": {
+                        "id": "Listener",
+                        "path": "FarFlow/AirflowService/AirflowService/NetworkLoadBalancer/Listener",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "FarFlow/AirflowService/AirflowService/NetworkLoadBalancer/Listener/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                              "aws:cdk:cloudformation:props": {
+                                "defaultActions": [
+                                  {
+                                    "type": "forward",
+                                    "targetGroupArn": {
+                                      "Ref": "AirflowServiceNetworkLoadBalancerListenerAirflowFargateServiceTargetGroupGroupBE293586"
+                                    }
+                                  }
+                                ],
+                                "loadBalancerArn": {
+                                  "Ref": "AirflowServiceNetworkLoadBalancerE66A9F34"
+                                },
+                                "port": 80,
+                                "protocol": "TCP"
+                              }
+                            }
+                          },
+                          "AirflowFargateServiceTargetGroupGroup": {
+                            "id": "AirflowFargateServiceTargetGroupGroup",
+                            "path": "FarFlow/AirflowService/AirflowService/NetworkLoadBalancer/Listener/AirflowFargateServiceTargetGroupGroup",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "FarFlow/AirflowService/AirflowService/NetworkLoadBalancer/Listener/AirflowFargateServiceTargetGroupGroup/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                                  "aws:cdk:cloudformation:props": {
+                                    "healthCheckPath": "/health",
+                                    "healthCheckPort": "traffic-port",
+                                    "healthCheckProtocol": "HTTP",
+                                    "port": 80,
+                                    "protocol": "TCP",
+                                    "tags": [
+                                      {
+                                        "key": "Stack",
+                                        "value": "FarFlow"
+                                      }
+                                    ],
+                                    "targetGroupAttributes": [
+                                      {
+                                        "key": "deregistration_delay.timeout_seconds",
+                                        "value": "60"
+                                      }
+                                    ],
+                                    "targetType": "ip",
+                                    "vpcId": {
+                                      "Ref": "Vpc8378EB38"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "LoadBalanceDNSName": {
+                    "id": "LoadBalanceDNSName",
+                    "path": "FarFlow/AirflowService/AirflowService/LoadBalanceDNSName"
+                  }
+                }
+              },
+              "AdminPassword": {
+                "id": "AdminPassword",
+                "path": "FarFlow/AirflowService/AdminPassword"
+              }
+            }
+          },
+          "DagTasks-TaskConstruct": {
+            "id": "DagTasks-TaskConstruct",
+            "path": "FarFlow/DagTasks-TaskConstruct",
+            "children": {
+              "EFSVolume": {
+                "id": "EFSVolume",
+                "path": "FarFlow/DagTasks-TaskConstruct/EFSVolume",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "FarFlow/DagTasks-TaskConstruct/EFSVolume/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EFS::FileSystem",
+                      "aws:cdk:cloudformation:props": {
+                        "fileSystemTags": [
+                          {
+                            "key": "Name",
+                            "value": "FarFlow/DagTasks-TaskConstruct/EFSVolume"
+                          },
+                          {
+                            "key": "Stack",
+                            "value": "FarFlow"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "EfsMountTarget1": {
+                    "id": "EfsMountTarget1",
+                    "path": "FarFlow/DagTasks-TaskConstruct/EFSVolume/EfsMountTarget1",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EFS::MountTarget",
+                      "aws:cdk:cloudformation:props": {
+                        "fileSystemId": {
+                          "Ref": "DagTasksTaskConstructEFSVolumeBE5A9C43"
+                        },
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "SecurityGroupDD263621",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnetId": {
+                          "Ref": "VpcPrivateSubnet1Subnet536B997A"
+                        }
+                      }
+                    }
+                  },
+                  "EfsMountTarget2": {
+                    "id": "EfsMountTarget2",
+                    "path": "FarFlow/DagTasks-TaskConstruct/EFSVolume/EfsMountTarget2",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::EFS::MountTarget",
+                      "aws:cdk:cloudformation:props": {
+                        "fileSystemId": {
+                          "Ref": "DagTasksTaskConstructEFSVolumeBE5A9C43"
+                        },
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "SecurityGroupDD263621",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnetId": {
+                          "Ref": "VpcPrivateSubnet2Subnet3788AAA1"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "FarFlowMLTask-TaskConstruct": {
+                "id": "FarFlowMLTask-TaskConstruct",
+                "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct",
+                "children": {
+                  "FarFlowMLTask-TaskDef": {
+                    "id": "FarFlowMLTask-TaskDef",
+                    "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef",
+                    "children": {
+                      "TaskRole": {
+                        "id": "TaskRole",
+                        "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/TaskRole",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/TaskRole/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                              "aws:cdk:cloudformation:props": {
+                                "assumeRolePolicyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "sts:AssumeRole",
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "Service": "ecs-tasks.amazonaws.com"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "managedPolicyArns": [
+                                  {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":iam::aws:policy/AmazonElasticFileSystemClientReadWriteAccess"
+                                      ]
+                                    ]
+                                  }
+                                ],
+                                "tags": [
+                                  {
+                                    "key": "Stack",
+                                    "value": "FarFlow"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                          "aws:cdk:cloudformation:props": {
+                            "containerDefinitions": [
+                              {
+                                "essential": true,
+                                "image": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      {
+                                        "Ref": "AWS::AccountId"
+                                      },
+                                      ".dkr.ecr.",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ".",
+                                      {
+                                        "Ref": "AWS::URLSuffix"
+                                      },
+                                      "/aws-cdk/assets:66bfff368c75cb8aae51a5de21af6d62f8f6e4c878671d57ac8f06a2e5267127"
+                                    ]
+                                  ]
+                                },
+                                "mountPoints": [
+                                  {
+                                    "containerPath": "/shared-volume",
+                                    "readOnly": false,
+                                    "sourceVolume": "SharedVolume"
+                                  }
+                                ],
+                                "name": "MLTaskContainer",
+                                "logConfiguration": {
+                                  "logDriver": "awslogs",
+                                  "options": {
+                                    "awslogs-group": {
+                                      "Ref": "FarFlowDagTaskLogsA7522BE9"
+                                    },
+                                    "awslogs-stream-prefix": "FarFlowDagTaskLogging",
+                                    "awslogs-region": {
+                                      "Ref": "AWS::Region"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "cpu": "512",
+                            "executionRoleArn": {
+                              "Fn::GetAtt": [
+                                "DagTasksTaskConstructFarFlowMLTaskTaskConstructFarFlowMLTaskTaskDefExecutionRole6FB3CE73",
+                                "Arn"
+                              ]
+                            },
+                            "family": "FarFlowMLTask",
+                            "memory": "1024",
+                            "networkMode": "awsvpc",
+                            "requiresCompatibilities": [
+                              "FARGATE"
+                            ],
+                            "tags": [
+                              {
+                                "key": "Stack",
+                                "value": "FarFlow"
+                              }
+                            ],
+                            "taskRoleArn": {
+                              "Fn::GetAtt": [
+                                "DagTasksTaskConstructFarFlowMLTaskTaskConstructFarFlowMLTaskTaskDefTaskRole670B93AB",
+                                "Arn"
+                              ]
+                            },
+                            "volumes": [
+                              {
+                                "name": "SharedVolume",
+                                "efsVolumeConfiguration": {
+                                  "fileSystemId": {
+                                    "Ref": "DagTasksTaskConstructEFSVolumeBE5A9C43"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "MLTaskContainer": {
+                        "id": "MLTaskContainer",
+                        "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/MLTaskContainer"
+                      },
+                      "ExecutionRole": {
+                        "id": "ExecutionRole",
+                        "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/ExecutionRole",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/ExecutionRole/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                              "aws:cdk:cloudformation:props": {
+                                "assumeRolePolicyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "sts:AssumeRole",
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "Service": "ecs-tasks.amazonaws.com"
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "tags": [
+                                  {
+                                    "key": "Stack",
+                                    "value": "FarFlow"
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          "DefaultPolicy": {
+                            "id": "DefaultPolicy",
+                            "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/ExecutionRole/DefaultPolicy",
+                            "children": {
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/FarFlowMLTask-TaskDef/ExecutionRole/DefaultPolicy/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                                  "aws:cdk:cloudformation:props": {
+                                    "policyDocument": {
+                                      "Statement": [
+                                        {
+                                          "Action": [
+                                            "ecr:BatchCheckLayerAvailability",
+                                            "ecr:GetDownloadUrlForLayer",
+                                            "ecr:BatchGetImage"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::Join": [
+                                              "",
+                                              [
+                                                "arn:",
+                                                {
+                                                  "Ref": "AWS::Partition"
+                                                },
+                                                ":ecr:",
+                                                {
+                                                  "Ref": "AWS::Region"
+                                                },
+                                                ":",
+                                                {
+                                                  "Ref": "AWS::AccountId"
+                                                },
+                                                ":repository/aws-cdk/assets"
+                                              ]
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "Action": "ecr:GetAuthorizationToken",
+                                          "Effect": "Allow",
+                                          "Resource": "*"
+                                        },
+                                        {
+                                          "Action": [
+                                            "logs:CreateLogStream",
+                                            "logs:PutLogEvents"
+                                          ],
+                                          "Effect": "Allow",
+                                          "Resource": {
+                                            "Fn::GetAtt": [
+                                              "FarFlowDagTaskLogsA7522BE9",
+                                              "Arn"
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      "Version": "2012-10-17"
+                                    },
+                                    "policyName": "DagTasksTaskConstructFarFlowMLTaskTaskConstructFarFlowMLTaskTaskDefExecutionRoleDefaultPolicy5DD91601",
+                                    "roles": [
+                                      {
+                                        "Ref": "DagTasksTaskConstructFarFlowMLTaskTaskConstructFarFlowMLTaskTaskDefExecutionRole6FB3CE73"
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "MLTaskContainer-BuildImage": {
+                    "id": "MLTaskContainer-BuildImage",
+                    "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/MLTaskContainer-BuildImage",
+                    "children": {
+                      "Staging": {
+                        "id": "Staging",
+                        "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/MLTaskContainer-BuildImage/Staging"
+                      },
+                      "Repository": {
+                        "id": "Repository",
+                        "path": "FarFlow/DagTasks-TaskConstruct/FarFlowMLTask-TaskConstruct/MLTaskContainer-BuildImage/Repository"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "FarFlowDagTaskLogs": {
+            "id": "FarFlowDagTaskLogs",
+            "path": "FarFlow/FarFlowDagTaskLogs",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "FarFlow/FarFlowDagTaskLogs/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "logGroupName": "FarFlowDagTaskLogs",
+                    "retentionInDays": 30
+                  }
+                }
+              }
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "FarFlow/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "FarFlow/CDKMetadata/Default"
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "FarFlow/CDKMetadata/Condition"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
